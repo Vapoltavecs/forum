@@ -1,11 +1,11 @@
-import axios from "axios"
+import $api from "../instanse"
 
 const answer = {
     get(){
 
     },
     create(data){
-        return axios.post('api/posts/add-answer/', data)
+        return $api.post('api/posts/add-answer/', data)
     }
 }
 

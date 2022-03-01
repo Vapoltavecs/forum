@@ -1,7 +1,7 @@
-import axios from "axios"
+import $api from "../instanse"
 const question = {
     get(id) {
-        return axios.get(`/api/posts/question/${id}`)
+        return $api.get(`/api/posts/question/${id}`)
     }
 }
 

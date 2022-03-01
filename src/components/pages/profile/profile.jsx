@@ -4,6 +4,7 @@ import M from "materialize-css";
 import classes from "./profile.module.scss";
 import { Spinner } from "../../ui-components/Spinner/Spinner";
 import { Achivment } from "../../ui-components/achivement/Achivement";
+import { Question } from "../../ui-components/question/question";
 
 const Profile = () => {
   const [userData, setUserData] = useState({
@@ -11,9 +12,9 @@ const Profile = () => {
     status: "",
     id: null,
     avatar: "",
-    description:
-      "            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio quae error,",
+    description:"",
     achievements: [],
+    questions: [],
   });
   const [isLoading, setLoading] = useState(false);
   useEffect(() => {
@@ -48,9 +49,16 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      <div className={classes.achievements__title}>Мои достижения:</div>
       <div className={classes.achivments}>
         {userData.achievements.map((el) => (
           <Achivment {...el} key={el.id} />
+        ))}
+      </div>
+      <div className={classes.questions}>
+        <div className={classes.questions__title}>Мои вопросы:</div>
+        {userData.questions.map((el) => (
+          <Question {...el} key={el.id} />
         ))}
       </div>
     </div>

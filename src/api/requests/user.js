@@ -1,9 +1,9 @@
-import axios from "axios"
+import $api from "../instanse"
 export const user = {
     get() {
-        return axios.get('api/user/profile')
+        return $api.get('api/user/profile')
     },
     create(data) {
-        return axios.post('/api/auth/users/', data)
+        return $api.post('/api/auth/users/', data)
     }
 }

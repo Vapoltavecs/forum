@@ -1,11 +1,11 @@
-import axios from "axios"
+import $api from "../instanse"
 
 const auth = {
     get() {
-        return axios.get('api/user/profile')
+        return $api.get('api/user/profile')
     },
     create(email, password) {
-        return axios.post('api/user/token-create/', {
+        return $api.post('api/user/token-create/', {
             email, password
         })
     }

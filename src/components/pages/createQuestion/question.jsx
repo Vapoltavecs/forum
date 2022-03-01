@@ -20,7 +20,7 @@ export const CreateQuestion = () => {
         await requests.questions.create({
           ...data,
           content,
-          tags: data.tags.split(',')
+          tags: data.tags.split(","),
         })
       ).data;
       M.toast({ html: "Пост успешно создан", classes: "succes" });
